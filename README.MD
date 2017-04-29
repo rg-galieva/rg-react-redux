@@ -1,14 +1,13 @@
 THIS DOCUMENT IS IN PROGRESS. THIS PARAGRAPH SHALL BE REMOVED WHEN THIS DOCUMENT IS DONE.
 
 ### Tech Stack
-- react
+- react v15
 - redux
-- react-router v3
+- react-router-dom
 - webpack v2: separate sets for development & production
 - postcss/cssnext, css modules
-- source maps
 - surge deploy
-- yarn (package manager) as alternative to npm 
+- yarn
 
 
 ### Getting started

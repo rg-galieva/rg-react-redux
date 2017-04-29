@@ -2,15 +2,16 @@ const {resolve} = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const cssSettings = require('../../src/frontend/assets/styles/vars.js');
+// const OfflinePlugin = require('offline-plugin');
+const cssSettings = require('./../../src/assets/styles/vars.js');
 
 module.exports = function () {
     return {
         context: resolve(__dirname, './../../src'),
 
         entry: {
-            vendor: ['react', 'react-dom'],
-            app: './frontend/app.js'
+            vendor: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom', 'react-router-redux'],
+            app: './app.js'
         },
 
         module: {
@@ -23,10 +24,10 @@ module.exports = function () {
 
 
                 {
-                    test: /\.css$/,
+                    test: /\.pcss$/,
                     use: ExtractTextPlugin.extract({
-                            fallbackLoader: 'style-loader',
-                            loader: [
+                            fallback: 'style-loader',
+                            use: [
                                 {
                                     loader: 'css-loader',
                                     options: {
@@ -57,8 +58,8 @@ module.exports = function () {
                 {
                     test: /\.gcss$/,
                     use: ExtractTextPlugin.extract({
-                        fallbackLoader: 'style-loader',
-                        loader: [
+                        fallback: 'style-loader',
+                        use: [
                             {
                                 loader: 'css-loader'
                             },
@@ -87,7 +88,24 @@ module.exports = function () {
                 },
                 {
                     test: /\.svg$/,
-                    use: 'raw-loader'
+                    use: [
+                        {
+                            loader: 'file-loader?name=svg/[name].[ext]'
+                        },
+                        {
+                            loader: 'svgo-loader',
+                            options: {
+                                plugins: [
+                                    {removeTitle: true},
+                                    {removeUselessDefs: false},
+                                    {convertPathData: false},
+                                    {removeAttrs: false},
+                                    {cleanupIDs: false},
+                                    {removeHiddenElems: false}
+                                ]
+                            }
+                        }
+                    ]
                 },
                 {
                     test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
@@ -99,10 +117,19 @@ module.exports = function () {
         plugins: [
             new ExtractTextPlugin({filename: '[name].styles.css'}),
             new HtmlWebpackPlugin({
-                title: 'React Redux App',
-                favicon: '',
+                title: 'Regina Galieva',
                 template: __dirname + '/template.html'
-            })
+            }),
+            // new OfflinePlugin({
+            //     ServiceWorker: {
+            //         navigateFallbackURL: '/'
+            //     },
+            //     AppCache: {
+            //         FALLBACK: {
+            //             '/': '/offline.html'
+            //         }
+            //     }
+            // })
         ]
     }
 }

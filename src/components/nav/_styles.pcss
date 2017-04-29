@@ -2,8 +2,8 @@
 
 :root {
   --nav: {
-    margin-bottom: calc(30rem / var(--f_size));
-    font-size: 1rem;
+    font-size: calc(14rem / var(--f_size));
+    font-weight: var(--f_bold);
 
     & a {
       position: relative;
@@ -18,7 +18,7 @@
         top: 110%;
         left: 0;
         width: 100%;
-        height: calc(.75rem/var(--f_size));
+        height: calc(.75rem / var(--f_size));
         background: var(--c_txt);
         content: '';
         opacity: 0;
@@ -26,8 +26,9 @@
         transform: translateY(-1rem);
       }
 
+      &:global(.is_act),
       &:hover,
-      &:focus{
+      &:focus {
         color: var(--c_txt);
 
         &::after {
@@ -48,9 +49,3 @@
 :global(.nav) {
   @apply --nav;
 }
-
-
-
-
-
-

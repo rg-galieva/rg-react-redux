@@ -1,6 +1,6 @@
 import React from 'react'
-import s from './_styles.css'
-import {Link} from 'react-router'
+import s from './_styles.pcss'
+import {NavLink} from 'react-router-dom'
 const i_stats = require('./stats.svg');
 
 function StyleGuide() {
@@ -32,13 +32,13 @@ function StyleGuide() {
 
                 <article className={[s.content, s.post].join(" ")}>
                     <div className={s.post_image}>
-                        <Link to={`/post/${id}`}>
+                        <NavLink to={`/post/${id}`}>
                             <div className={s.post_image_bg}></div>
-                        </Link>
+                        </NavLink>
                     </div>
 
                     <div className={s.post_info}>
-                        <Link to={`/post/${id}`}><h4>web design showcase march</h4></Link>
+                        <NavLink to={`/post/${id}`}><h4>web design showcase march</h4></NavLink>
                         <time dateTime="2016-09-10" className="is-emph">September 10, 2016 | by Regina Radium</time>
 
                         <div className={[s.desc, "clearfix"].join(" ")}>
@@ -54,7 +54,7 @@ function StyleGuide() {
                                 volutpat
                                 consequat lacus quis ornare. Ut vel lobortis nisl. Morbi eleifend maximus arcu.</p>
 
-                            <Link to={`/post/${id}`} className={s.link_full_post}>continue reading...</Link>
+                            <NavLink to={`/post/${id}`} className={s.link_full_post}>continue reading...</NavLink>
                         </div>
                     </div>
                 </article>
