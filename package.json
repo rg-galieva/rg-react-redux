@@ -1,6 +1,6 @@
 {
   "name": "rg-react-redux",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "src/frontend/app.js",
   "author": "Regina Galieva",
   "license": "MIT",
@@ -17,7 +17,7 @@
   "keywords": [
     "redux",
     "react",
-    "react-router"
+    "react-router-dom"
   ],
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -44,10 +44,10 @@
     "webpack-merge": "^2.6.1"
   },
   "dependencies": {
-    "react": "^15.4.2",
+    "react": "^15.5.4",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
-    "react-router": "^3.0.2",
+    "react-router": "^4.1.1",
     "redux": "^3.6.0"
   }
 }
