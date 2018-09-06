@@ -1,32 +1,26 @@
 import React from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Header from '../../components/header'
-require('../../assets/styles/common.gcss')
-import s from './_styles.pcss'
+import s from './styles.scss'
+
+import '../../assets/styles/common.scss';
 
 export default function (props) {
     return (
-        <div className={s.wrap}>
-            <Header/>
+      <div className={s.wrap}>
+          <Header/>
 
-            <main>
-                <ReactCSSTransitionGroup
-                    transitionName="sliding"
-                    transitionEnterTimeout={350}
-                    transitionLeave={false}
-                    component="section">
-                    {props.children}
-                </ReactCSSTransitionGroup>
-            </main>
+          <main>
+              {props.children}
+          </main>
 
-            <footer className={s.footer}>
-                <nav>
-                    <a href="">Links</a>
-                    <a href="">Links</a>
-                    <a href="">Links</a>
-                </nav>
-            </footer>
-        </div>
+          <footer className={s.footer}>
+              <nav>
+                  <a href="">Links</a>
+                  <a href="">Links</a>
+                  <a href="">Links</a>
+              </nav>
+          </footer>
+      </div>
     );
 }
 

@@ -9,12 +9,12 @@ module.exports = function (env) {
             path: resolve(__dirname, './../../dist/dev'),
             publicPath: '/assets/'
         },
-
+        mode: 'development',
         devServer: {
             historyApiFallback: true,
             compress: true,
             port: 5050,
-            noInfo: true,
+            noInfo: false,
             watchOptions: { aggregateTimeout: 300, poll: 1000 },
             headers: {
                 "Access-Control-Allow-Origin": "*",

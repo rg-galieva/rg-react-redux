@@ -9,7 +9,7 @@ const PUBLIC_PATH = '/';
 module.exports = function (env) {
     return webpackMerge(commonConfig(), {
         devtool: 'cheap-module-source-map',
-
+        mode: 'production',
         output: {
             filename: '[name].build.js',
             path: resolve(__dirname, './../../dist'),

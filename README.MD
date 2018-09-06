@@ -1,18 +1,16 @@
 THIS DOCUMENT IS IN PROGRESS. THIS PARAGRAPH SHALL BE REMOVED WHEN THIS DOCUMENT IS DONE.
 
 ### Tech Stack
-- react v15
+- react v16
 - redux
 - react-router-dom
-- webpack v2: separate sets for development & production
-- postcss/cssnext, css modules
+- webpack v4: separate sets for development & production
 - surge deploy
-- yarn
 
 
 ### Getting started
 ```
-$ yarn install
+$ npm install
 // install all dependencies
 ```
 ```

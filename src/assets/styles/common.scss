@@ -1,13 +1,13 @@
-@import "vars.gcss";
-@import "normilize.gcss";
-@import "button.gcss";
-@import "form.gcss";
-@import "grid.gcss";
+@import "vars.scss";
+@import "normilize.scss";
+@import "button.scss";
+@import "form.scss";
+@import "grid.scss";
 
 html {
-  color: var(--c_txt);
+  color: $c_txt;
   font-family: sans-serif;
-  font-weight: var(--f_regular);
+  font-weight: $f_regular;
 }
 
 h1,
@@ -16,7 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--f_bold);
+  font-weight: $f_bold;
   margin-bottom: 1rem;
 }
 
@@ -26,31 +26,31 @@ h6 {
   }
 
   & a {
-    color: var(--c_txt);
+    color: $c_txt;
 
     &:visited {
-      color: var(--c_link_vis);
+      color: $c_link_vis;
     }
 
     &:hover {
       text-decoration: none;
-      color: var(--c_sub);
+      color: $c_sub;
     }
   }
 }
 
 th {
-  background-color: var(--c_thead);
+  background-color: $c_thead;
   line-height: calc(53rem / 16);
-  font-weight: var(--f_bold);
+  font-weight: $f_bold;
   text-transform: capitalize;
   padding: 0 calc(20rem / 16);
 }
 
 tbody {
-  color: var(--c_sub);
-  border-left: 1px solid var(--c_thead);
-  border-right: 1px solid var(--c_thead);
+  color: $c_sub;
+  border-left: 1px solid $c_thead;
+  border-right: 1px solid $c_thead;
 }
 
 td {
@@ -58,11 +58,11 @@ td {
 }
 
 tr {
-  border-bottom: 1px solid var(--c_thead);
+  border-bottom: 1px solid $c_thead;
 }
 
 blockquote {
-  border-left: 2px solid var(--c_txt);
+  border-left: 2px solid $c_txt;
   padding-left: 15px;
 }
 
@@ -85,7 +85,7 @@ q {
 }
 
 .is-emph {
-  color: var(--c_emph);
+  color: $c_emph;
 }
 
 .app_wrap {

@@ -1,4 +1,4 @@
-@import "vars.gcss";
+@import "vars.scss";
 
 .input_wrap {
   position: relative;
@@ -8,8 +8,8 @@
 .input_wrap input {
   width: 100%;
   border: none;
-  line-height: calc(50rem / var(--f_size));
-  color: var(--c_sub);
+  line-height: calc(50rem / #{$f_size});
+  color: $c_sub;
   background: transparent;
 }
 
@@ -17,12 +17,12 @@
   display: block;
   width: 100%;
   position: absolute;
-  line-height: calc(50rem / var(--f_size));
+  line-height: calc(50rem / #{$f_size});
   left: 0;
   top: 0;
   pointer-events: none;
   text-transform: uppercase;
-  
+
   & span {
     position: relative;
     display: block;
@@ -35,7 +35,7 @@
     position: absolute;
     width: 100%;
     height: 2px;
-    background: var(--c_sub);
+    background: $c_sub;
     left: 0;
     top: 100%;
     transform-origin: 50% 100%;
@@ -44,12 +44,12 @@
 }
 
 input:focus + label > span {
-  color: var(--c_emph);
-  transform: translate3d(0, calc(50rem / var(--f_size)), 0) scale3d(0.8, 0.8, 1);
+  color: $c_emph;
+  transform: translate3d(0, calc(50rem / #{$f_size}), 0) scale3d(0.8, 0.8, 1);
 }
 
 input:focus + label::after {
-  background: var(--c_emph);
+  background: $c_emph;
   transform: scale3d(1, 0.25, 1);
 }
 
@@ -64,6 +64,6 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--c_emph);
+  -webkit-text-fill-color: $c_emph;
   transition: all 5000s ease-in-out 0s;
 }

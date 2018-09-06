@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {findDOMNode} from 'react-dom'
 import {NavLink} from 'react-router-dom'
 import Nav from '../nav'
-import s from './_styles.pcss'
+import s from './styles.scss'
 
 class Header extends Component {
     componentDidMount() {

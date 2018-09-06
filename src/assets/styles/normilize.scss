@@ -1,4 +1,5 @@
-@import "vars.gcss";
+@import "./vars.scss";
+
 /*
  * General
  * Headings: h1-h6
@@ -19,7 +20,7 @@ html {
 
 body {
   margin: 0;
-  line-height: calc(24rem / var(--f_size));
+  line-height: calc(24rem / #{$f_size});
   font-family: sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -54,50 +55,50 @@ h6 {
 }
 
 h1 {
-  font-size: calc(63rem / var(--f_size));
-  line-height: calc(58rem / var(--f_size));
+  font-size: calc(63rem / #{$f_size});
+  line-height: calc(58rem / #{$f_size});
 }
 
 h2 {
-  font-size: calc(48rem / var(--f_size));
-  line-height: calc(48rem / var(--f_size));
+  font-size: calc(48rem / #{$f_size});
+  line-height: calc(48rem / #{$f_size});
 }
 
 h3 {
-  font-size: calc(36rem / var(--f_size));
-  line-height: calc(36rem / var(--f_size));
+  font-size: calc(36rem / #{$f_size});
+  line-height: calc(36rem / #{$f_size});
 }
 
 h4 {
-  font-size: calc(30rem / var(--f_size));
-  line-height: calc(36rem / var(--f_size));
+  font-size: calc(30rem / #{$f_size});
+  line-height: calc(36rem / #{$f_size});
 }
 
 h5 {
-  font-size: calc(20rem / var(--f_size));
-  line-height: calc(24rem / var(--f_size));
+  font-size: calc(20rem / #{$f_size});
+  line-height: calc(24rem / #{$f_size});
 }
 
 h6 {
-  font-size: calc(12rem / var(--f_size));
-  line-height: calc(14rem / var(--f_size));
+  font-size: calc(12rem / #{$f_size});
+  line-height: calc(14rem / #{$f_size});
 }
 
 p {
-  font-size: calc(14rem / var(--f_size));
-  line-height: calc(24rem / var(--f_size));
+  font-size: calc(14rem / #{$f_size});
+  line-height: calc(24rem / #{$f_size});
 }
 
 a {
   cursor: pointer;
   transition: .3s;
   outline: none;
-  color: var(--c_txt);
+  color: $c_txt;
   text-decoration: none;
 
   &:hover, &:focus {
     outline: none;
-    color: var(--c_emph);
+    color: $c_emph;
   }
 }
 
@@ -113,9 +114,9 @@ img {
 }
 
 ol, ul {
-  margin-left: calc(20rem / var(--f_size));
+  margin-left: calc(20rem / #{$f_size});
   list-style-position: inside;
-  font-size: calc(14rem/var(--f_size));
+  font-size: calc(14rem / #{$f_size});
 }
 
 ul {
@@ -123,10 +124,10 @@ ul {
 }
 
 ol li, ul li {
-  line-height: calc(32rem / var(--f_size));
+  line-height: calc(32rem / #{$f_size});
 
   & ol {
-    margin: calc(30rem / var(--f_size)) 0 calc(30rem / var(--f_size)) calc(30rem / var(--f_size))
+    margin: calc(30rem / #{$f_size}) 0 calc(30rem / #{$f_size}) calc(30rem / #{$f_size})
   }
 }
 
@@ -181,24 +182,24 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-@media (--w_phone_only) {
+@media ($w_phone_only) {
   h1 {
-    font-size: calc(53rem / var(--f_size));
-    line-height: calc(50rem / var(--f_size));
+    font-size: calc(53rem / #{$f_size});
+    line-height: calc(50rem / #{$f_size});
   }
 
   h2 {
-    font-size: calc(35rem / var(--f_size));
-    line-height: calc(35rem / var(--f_size));
+    font-size: calc(35rem / #{$f_size});
+    line-height: calc(35rem / #{$f_size});
   }
 
   h3 {
-    font-size: calc(30rem / var(--f_size));
-    line-height: calc(30rem / var(--f_size));
+    font-size: calc(30rem / #{$f_size});
+    line-height: calc(30rem / #{$f_size});
   }
 
   h4 {
-    font-size: calc(28rem / var(--f_size));
-    line-height: calc(30rem / var(--f_size));
+    font-size: calc(28rem / #{$f_size});
+    line-height: calc(30rem / #{$f_size});
   }
 }

@@ -1,9 +1,8 @@
 const {resolve} = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const OfflinePlugin = require('offline-plugin');
-const cssSettings = require('./../../src/assets/styles/vars.js');
 
 module.exports = function () {
     return {
@@ -18,69 +17,35 @@ module.exports = function () {
             rules: [
                 {
                     test: /\.js$/,
-                    use: ['babel-loader'],
-                    exclude: /node_modules/
-                },
-
-
-                {
-                    test: /\.pcss$/,
-                    use: ExtractTextPlugin.extract({
-                            fallback: 'style-loader',
-                            use: [
-                                {
-                                    loader: 'css-loader',
-                                    options: {
-                                        modules: true,
-                                        localIdentName: '[local]_[hash:base64:5]',
-                                        importLoaders: 1
-                                    }
-                                },
-                                {
-                                    loader: 'postcss-loader',
-                                    options: {
-                                        sourceMap: 'inline',
-                                        plugins: function () {
-                                            return [
-                                                require('postcss-import'),
-                                                require('postcss-mixins'),
-                                                require('postcss-cssnext')({
-                                                    features: cssSettings
-                                                })
-                                            ]
-                                        }
-                                    }
-                                }
-                            ]
+                    exclude: /node_modules/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
                         }
-                    )
+                    }
                 },
-                {
-                    test: /\.gcss$/,
-                    use: ExtractTextPlugin.extract({
-                        fallback: 'style-loader',
-                        use: [
-                            {
-                                loader: 'css-loader'
-                            },
-                            {
-                                loader: 'postcss-loader',
-                                options: {
-                                    sourceMap: 'inline',
-                                    plugins: function () {
-                                        return [
-                                            require('postcss-import'),
-                                            require('postcss-mixins'),
-                                            require('postcss-cssnext')({
-                                                features: cssSettings
-                                            })
-                                        ]
-                                    }
-                                }
-                            }
 
-                        ]
-                    })
+                {
+                    test: /\.scss$/,
+                    use: [
+                        // process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                        'style-loader',
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: true,
+                                localIdentName: '[local]_[hash:base64:5]',
+                                importLoaders: 1
+                            }
+                        },
+                        {
+                            loader: "sass-loader",
+                            options: {
+                                sourceMap: true
+                            }
+                        }
+                    ]
                 },
                 {
                     test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2)(\?.*)?$/,
@@ -115,7 +80,10 @@ module.exports = function () {
         },
 
         plugins: [
-            new ExtractTextPlugin({filename: '[name].styles.css'}),
+            new MiniCssExtractPlugin({
+                filename: "[name].styles.css",
+                chunkFilename: "[id].css"
+            }),
             new HtmlWebpackPlugin({
                 title: 'Regina Galieva',
                 template: __dirname + '/template.html'
