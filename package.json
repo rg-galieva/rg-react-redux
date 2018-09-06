@@ -12,7 +12,8 @@
     "dev": "webpack-dev-server --env=development --hot --inline --progress --profile --colors",
     "dev:mobile": "webpack-dev-server --env=development --hot --inline --host 0.0.0.0",
     "build": "webpack --env=production --progress --profile --colors",
-    "deploy": "npm run build && cd dist && mv index.html 200.html && surge ./"
+    "deploy": "npm run build && cd dist && mv index.html 200.html && surge ./",
+    "lint:fix": "./node_modules/.bin/eslint . --fix"
   },
   "keywords": [
     "redux",
@@ -25,10 +26,17 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.2",
     "clean-webpack-plugin": "^0.1.15",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^1.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.2",
@@ -50,7 +58,6 @@
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.3",
     "react-router-dom": "^4.1.1",
-    "react-router-redux": "next",
     "redux": "^4.0.0"
   }
 }
