@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Layout from 'src/pages/layout/layout';
-import IndexPage from 'src/pages/index-page';
-import StyleGuide from 'src/pages/styleGuide/styleGuide';
-import NoMatch from 'src/pages/noMatch/noMatch';
+import Layout from 'client/pages/layout/layout';
+import IndexPage from 'client/pages/index-page';
+import StyleGuide from 'client/pages/styleGuide/styleGuide';
+import NoMatch from 'client/pages/noMatch/noMatch';
 
 export default (
   <Route render={({ location }) => (

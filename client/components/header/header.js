@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import Nav from 'src/components/nav/nav';
+import Nav from 'client/components/nav/nav';
 import s from './styles.scss';
 
 class Header extends Component {

@@ -1,12 +1,11 @@
-const {resolve} = require('path');
-const webpack = require('webpack');
+const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const OfflinePlugin = require('offline-plugin');
 
 module.exports = function () {
     return {
-        context: resolve(__dirname, './../../src'),
+        context: resolve(__dirname, './../../client'),
 
         entry: {
             vendor: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom'],
@@ -15,8 +14,8 @@ module.exports = function () {
 
         resolve: {
             alias: {
-                src: resolve(__dirname, '../../src/'),
-                assets: resolve(__dirname, '../../src/assets/')
+                client: resolve(__dirname, '../../client/'),
+                assets: resolve(__dirname, '../../client/assets/')
             }
         },
 
