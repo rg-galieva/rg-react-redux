@@ -1,26 +1,24 @@
 import React from 'react';
-import {render} from 'react-dom';
-import {createStore, applyMiddleware} from 'redux'
-import {Provider} from 'react-redux'
-import {ConnectedRouter, routerMiddleware} from 'react-router-redux'
+import { render } from 'react-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import reducers from './reducers';
-import history from './history'
-import routes from './routes'
+import routes from './routes';
 
-const middleware = routerMiddleware(history);
-const store = createStore(reducers, applyMiddleware(middleware));
+const store = createStore(reducers, applyMiddleware());
 
 // import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 // OfflinePluginRuntime.install();
 
 render(
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            {routes}
-        </ConnectedRouter>
-    </Provider>,
-    document.getElementById('app')
+  <Provider store={store}>
+    <BrowserRouter>
+      {routes}
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById('app'),
 );
 
 window.store = store;

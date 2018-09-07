@@ -1,0 +1,51 @@
+@import "../../assets/styles/vars.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  height: calc(60rem / #{$f_size});
+  transition: all .5s ease-in;
+  z-index: $z-layout;
+
+  & > section {
+    position: relative;
+    max-width: 1600px;
+    margin: calc(20rem / #{$f_size}) auto;
+    padding: 0 calc(100% / #{$f_size});
+  }
+
+  &:global(.is_sticky) {
+    background-color: $c_thead;
+  }
+}
+
+.logo {
+  @import url('https://fonts.googleapis.com/css?family=Voltaire');
+  position: relative;
+  float: left;
+  margin-right: 2rem;
+  height: calc(44rem / #{$f_size});
+  font-family: 'Voltaire', sans-serif;
+  text-transform: uppercase;
+  color: $c_txt;
+  font-size: calc(26rem / #{$f_size});
+  text-decoration: none;
+
+  mark {
+    padding: 2px 8px;
+    border: 2px solid #fff;
+    background: none;
+    color: #fff;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    mark {
+      color: $c_emph;
+      border-color: $c_emph;
+    }
+  }
+}

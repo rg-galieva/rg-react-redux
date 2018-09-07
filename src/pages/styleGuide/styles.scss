@@ -1,4 +1,4 @@
-@import "../../assets/styles/vars.gcss";
+@import "../../assets/styles/vars.scss";
 
 .style_guide {
   & > section {
@@ -19,7 +19,7 @@
 
 .heading {
   flex: 4;
-  padding-right: calc(100%/14);
+  padding-right: calc(100% / 14);
 }
 
 .content {
@@ -47,26 +47,26 @@
 .post_image {
   position: relative;
   width: 100%;
-  height: calc(300rem/var(--f_size));
+  height: calc(300rem / #{$f_size});
   background-image: url('./img/mendocino.jpg');
-  background-size:cover;
-  box-shadow:inset 0 0 0 2000px color(#3e6edf alpha(20%));
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px color(#3e6edf alpha(20%));
 }
 
 .post_info {
   margin: 1rem 5rem;
 
   & > a {
-    color: var(--c_txt);
+    color: $c_txt;
     text-decoration: none;
   }
 
   & > a:hover {
-    color: var(--c_link);
+    color: $c_link;
   }
 
   & > h4 {
-    font-weight: var(--f_bold);
+    font-weight: $f_bold;
   }
 }
 
@@ -84,36 +84,37 @@
 
 .likes {
   position: absolute;
-  top: 10px; right: 10px;
+  top: 10px;
+  right: 10px;
 }
 
 .desc {
-  margin: calc(20rem/var(--f_size)) 0 calc(40rem/var(--f_size));
+  margin: calc(20rem / #{$f_size}) 0 calc(40rem / #{$f_size});
 }
 
 .link_full_post {
-  font-weight: var(--f_bold);
+  font-weight: $f_bold;
 }
 
 .icon {
   display: inline-block;
   padding: 0 10px;
   text-align: center;
-  color: var(--c_sub);
+  color: $c_sub;
   font-size: 12px;
 
   & svg {
     margin-top: 10px;
     width: 20px;
     height: 20px;
-    fill: var(--c_txt);
+    fill: $c_txt;
     transition: all 0.2s ease-in;
   }
 
   &:hover {
     cursor: pointer;
     & svg {
-      fill: var(--c_sub);
+      fill: $c_sub;
     }
   }
 }
