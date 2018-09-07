@@ -1,5 +1,4 @@
 const { resolve } = require('path');
-const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -18,15 +17,6 @@ module.exports = function (env) {
     },
 
     plugins: [
-      new webpack.LoaderOptionsPlugin({
-        minimize: true,
-        debug: false,
-      }),
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production'),
-        },
-      }),
       new CleanWebpackPlugin(['dist', 'build'], {
         root: process.cwd(),
         verbose: true,
@@ -38,14 +28,6 @@ module.exports = function (env) {
           to: './',
         },
       ]),
-      new webpack.optimize.UglifyJsPlugin({
-        beautify: false,
-        mangle: false,
-        compress: {
-          warnings: false,
-        },
-        comments: false,
-      }),
     ],
   });
 };
