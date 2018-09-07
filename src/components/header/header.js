@@ -27,8 +27,8 @@ class Header extends Component {
         <header id="head" className={s.header}>
           <section className="clearfix">
             <NavLink to="/" className={s.logo}>
-                      RG
-              <mark>React_Redux</mark>
+              <mark>RG</mark>
+                      React Redux
             </NavLink>
             <Nav />
           </section>

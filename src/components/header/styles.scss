@@ -27,53 +27,25 @@
   position: relative;
   float: left;
   margin-right: 2rem;
-  width: calc(54rem / #{$f_size});
-  height: calc(54rem / #{$f_size});
-  padding: calc(7rem / #{$f_size}) 0 0 calc(8rem / #{$f_size});
+  height: calc(44rem / #{$f_size});
   font-family: 'Voltaire', sans-serif;
   text-transform: uppercase;
   color: $c_txt;
   font-size: calc(26rem / #{$f_size});
   text-decoration: none;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background: $c_txt;
-  }
-
-  &::before {
-    height: 2px;
-    width: calc(54rem / #{$f_size});
-    transition: width .3s, background-color .13s linear .25s;
-  }
-
-  &::after {
-    width: 2px;
-    height: calc(54rem / #{$f_size});
-    transition: all .2s;
-    transition-delay: .25s;
+  mark {
+    padding: 2px 8px;
+    border: 2px solid #fff;
+    background: none;
+    color: #fff;
+    margin-right: 10px;
   }
 
   &:hover {
-    &::before {
-      background: $c_emph;
-      width: calc(34rem / #{$f_size});
+    mark {
+      color: $c_emph;
+      border-color: $c_emph;
     }
-
-    &::after {
-      background: $c_emph;
-    }
-  }
-
-  & mark {
-    display: block;
-    font-size: calc(18rem / #{$f_size});
-    background: none;
-    color: $c_txt;
-    white-space: nowrap;
   }
 }

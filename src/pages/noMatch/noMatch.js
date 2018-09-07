@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const NoMatch = ({ history }) => (
   <div>
@@ -6,14 +7,24 @@ const NoMatch = ({ history }) => (
           Sorry, no match for:
       <code>{history.location.pathname}</code>
     </h3>
-    <a
+    <button
       className="is-emph"
-      role="button"
+      type="button"
+      tabIndex={0}
       onClick={history.goBack}
+      onKeyPress={history.goBack}
     >
           Back
-    </a>
+    </button>
   </div>
 );
+
+NoMatch.propTypes = {
+  history: PropTypes.shape({
+    location: PropTypes.shape({
+      pathname: PropTypes.string,
+    }),
+  }),
+};
 
 export default NoMatch;

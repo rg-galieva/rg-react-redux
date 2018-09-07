@@ -1,8 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
+import imgValley from './img/valley_of_fire.jpg';
+import iconStats from './stats.svg';
+
 import s from './styles.scss';
 
-const i_stats = require('./stats.svg');
 
 function StyleGuide() {
   const id = 1;
@@ -22,7 +25,7 @@ function StyleGuide() {
           <p>
 Aenean ac quam et risus tincidunt ultrices et sed ligula. Sed
             <a
-              href="#"
+              href="/"
             >
 consectetur
             </a>
@@ -37,7 +40,7 @@ feugiat
           </p>
           <p>
 Vivamus iaculis egestas odio, accumsan faucibus enim dictum
-            <a href="">eget</a>
+            <a href="/">eget</a>
 .
                       Sed volutpat
                       consequat lacus quis ornare. Ut vel lobortis nisl. Morbi eleifend maximus
@@ -49,7 +52,7 @@ Vivamus iaculis egestas odio, accumsan faucibus enim dictum
       <section className={s.row}>
         <header className={s.heading}><h2>Article, Image and Text</h2></header>
 
-        <article className={[s.content, s.post].join(' ')}>
+        <article className={`${s.content} ${s.post}`}>
           <div className={s.post_image}>
             <NavLink to={`/post/${id}`}>
               <div className={s.post_image_bg} />
@@ -65,7 +68,7 @@ September 10, 2016 | by Regina
 
             <div className={[s.desc, 'clearfix'].join(' ')}>
               <img
-                src={require('./img/valley_of_fire.jpg')}
+                src={imgValley}
                 alt=""
                 style={{ float: 'left', marginRight: '1rem' }}
               />
@@ -219,12 +222,12 @@ Duis ligula purus tempus.
         <header className={s.heading}><h2>Buttons</h2></header>
 
         <div className={s.content}>
-          <button className="btn btn_xl"><span data-hover="Button">Button</span></button>
-          <button className="btn"><span data-hover="Button">Button</span></button>
-          <button className="btn btn_xs"><span data-hover="Button">Button</span></button>
+          <button type="button" className="btn btn_xl"><span data-hover="Button">Button</span></button>
+          <button type="button" className="btn"><span data-hover="Button">Button</span></button>
+          <button type="button" className="btn btn_xs"><span data-hover="Button">Button</span></button>
 
-          <button className="btn_i">
-            <div dangerouslySetInnerHTML={{ __html: i_stats }} className="btn_icon" />
+          <button type="button" className="btn_i">
+            <img alt="icon" src={iconStats} className="btn_icon" />
           </button>
         </div>
       </section>
