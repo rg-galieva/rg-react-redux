@@ -8,12 +8,30 @@
     "url": "https://github.com/rg-galieva/rg-react-redux.git",
     "type": "git"
   },
+  "jest": {
+    "roots": [
+      "client"
+    ],
+    "collectCoverageFrom": [
+      "client/*.js"
+    ],
+    "setupFiles": [
+      "./tools/tests/jest/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/tests/jest/fileMock.js",
+      "\\.(css|scss)$": "<rootDir>/tools/tests/jest/styleMock.js",
+      "^client(.*)$": "<rootDir>/client$1"
+    }
+  },
   "scripts": {
     "dev": "webpack-dev-server --env=development --hot --inline --progress --profile --colors",
     "dev:mobile": "webpack-dev-server --env=development --hot --inline --host 0.0.0.0",
     "build": "webpack --env=production --progress --profile --colors",
     "deploy": "npm run build && cd dist && mv index.html 200.html && surge ./",
-    "lint:fix": "./node_modules/.bin/eslint . --fix"
+    "lint:fix": "./node_modules/.bin/eslint . --fix",
+    "test:jest": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "redux",
@@ -26,11 +44,15 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.2",
     "clean-webpack-plugin": "^0.1.15",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.0",
@@ -39,8 +61,10 @@
     "eslint-plugin-react": "^7.11.1",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.5.0",
     "mini-css-extract-plugin": "^0.4.2",
     "node-sass": "^4.9.3",
+    "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "svgo": "^1.0.5",
