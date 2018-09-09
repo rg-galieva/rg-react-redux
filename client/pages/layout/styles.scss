@@ -53,7 +53,7 @@
   }
 }
 
-@media ($w_phone_only) {
+@media #{$w_phone_only} {
   .footer {
     display: none;
   }
