@@ -1,24 +1,18 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import ReduxProviderWrapper from 'client/helpers/reduxProviderWrapper';
 
-import reducers from './reducers';
 import routes from './routes';
-
-const store = createStore(reducers, applyMiddleware());
 
 // import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 // OfflinePluginRuntime.install();
 
 render(
-  <Provider store={store}>
+  <ReduxProviderWrapper>
     <BrowserRouter>
       {routes}
     </BrowserRouter>
-  </Provider>,
+  </ReduxProviderWrapper>,
   document.getElementById('app'),
 );
-
-window.store = store;
