@@ -1,9 +1,11 @@
 module.exports = {
-    "extends": ["airbnb"],
+    "extends": ["airbnb", "plugin:jest/recommended"],
+    "plugins": ["jest"],
     "parser": "babel-eslint",
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "jest/globals": true
     },
     "rules": {
         "import/extensions": ["off"],
@@ -27,5 +29,10 @@ module.exports = {
         "jsx-a11y/click-events-have-key-events": ["warn"],
         "jsx-a11y/label-has-associated-control": ["off"],
         "jsx-a11y/label-has-for": ["off"],
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
     }
 };
